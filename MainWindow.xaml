@@ -29,16 +29,16 @@
         </ComboBox>
         <TextBox Grid.Column="1" Grid.Row="2" x:Name="tekstContent" Width="200" Height="30" HorizontalAlignment="Left"/>
 
-        <TextBlock Grid.ColumnSpan="2" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Center">
-            <TextBlock.FontSize>
+        <TextBox Grid.ColumnSpan="2" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <TextBox.FontSize>
                 <Binding Path="Value" ElementName="tekstSize"/>
-            </TextBlock.FontSize>
-            <TextBlock.Text>
-                <Binding Path="Text" ElementName="tekstContent"/>
-            </TextBlock.Text>
-            <TextBlock.Foreground>
+            </TextBox.FontSize>
+            <TextBox.Text>
+                <Binding Path="Text" ElementName="tekstContent" UpdateSourceTrigger="PropertyChanged"/>
+            </TextBox.Text>
+            <TextBox.Foreground>
                 <Binding Path="SelectedItem.Content" ElementName="tekstColor"/>
-            </TextBlock.Foreground>
-        </TextBlock>
+            </TextBox.Foreground>
+        </TextBox>
     </Grid>
 </Window>
