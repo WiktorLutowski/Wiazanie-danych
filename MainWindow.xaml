@@ -5,16 +5,29 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Wiazanie_danych"
         mc:Ignorable="d"
-        Title="Test wiązania danych" Height="200" Width="550">
-    <Grid>
-        <StackPanel>
-            <Slider x:Name="rozmiarTekstu" Minimum="10" Value="15" Maximum="45"/>
-            <TextBlock>
-                <TextBlock.FontSize>
-                    <Binding Path="Value" ElementName="rozmiarTekstu"/>
-                </TextBlock.FontSize>
-                Testujemy wiązanie danych
-            </TextBlock>
-        </StackPanel>
+        Title="Produkt" Height="220" Width="350">
+
+    <Grid x:Name="gridProdukt">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        
+        <Label Content="Symbol:" Grid.Row="0" Grid.Column="0" Margin="5"/>
+        <TextBox Grid.Row="0" Grid.Column="1" Margin="5" Text="{Binding Symbol}"/>
+        <Label Content="Nazwa: " Grid.Row="1" Grid.Column="0" Margin="5"/>
+        <TextBox Grid.Row="1" Grid.Column="1" Margin="5" Text="{Binding Nazwa}"/>
+        <Label Content="Liczba sztuk: " Grid.Row="2" Grid.Column="0" Margin="5"/>
+        <TextBox Grid.Row="2" Grid.Column="1" Margin="5" Text="{Binding LiczbaSztuk}"/>
+        <Label Content="Magazyn:" Grid.Row="3" Grid.Column="0" Margin="5"/>
+        <TextBox Grid.Row="3" Grid.Column="1" Margin="5" Text="{Binding Magazyn}"/>
+        <Button x:Name="btnPotwierdz" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Margin="4" MinWidth="120" HorizontalAlignment="Center"  Content="Potwierdź"/>
     </Grid>
 </Window>
