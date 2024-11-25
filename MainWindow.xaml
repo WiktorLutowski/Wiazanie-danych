@@ -9,7 +9,10 @@
     <Grid>
         <StackPanel>
             <Slider x:Name="rozmiarTekstu" Minimum="10" Value="15" Maximum="45"/>
-            <TextBlock FontSize="{Binding Path=Value, ElementName=rozmiarTekstu}"> 
+            <TextBlock>
+                <TextBlock.FontSize>
+                    <Binding Path="Value" ElementName="rozmiarTekstu"/>
+                </TextBlock.FontSize>
                 Testujemy wiązanie danych
             </TextBlock>
         </StackPanel>
