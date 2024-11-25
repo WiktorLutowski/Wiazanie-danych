@@ -18,11 +18,21 @@ namespace Wiazanie_danych
     /// <summary>
     /// Logika interakcji dla klasy MainWindow.xaml
     /// </summary>
+
     public partial class MainWindow : Window
     {
+        private Produkt p1 = null;
+
         public MainWindow()
         {
             InitializeComponent();
+            PrzygotujWiazanie();
+        }
+
+        private void PrzygotujWiazanie()
+        {
+            p1 = new Produkt("DZ-10", "długopis żelowy", 132, "Katowice 1");
+            gridProdukt.DataContext = p1;
         }
     }
 }
